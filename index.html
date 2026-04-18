@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles-start.css">
+    <link rel="icon" href="./images/EC-32x18.png" type="image/x-icon">
+    <title>ECPong</title>
+</head>
+<body>
+    <header class="header container">
+        <a class="header-link" href="./images/finger-gif-finger-gif.gif">
+            <img class="header-img" src="./images/logo.svg" alt="logo-ecpong">
+        </a>
+    </header>
+    <main class="container">
+        <div class="main-menu">
+            <img class="main-menu-rockets-and-ball" src="./images/rockets-and-ball.svg">
+            <img class="main-menu-grid" src="./images/grid-start.svg">
+            <div class="main-menu-buttons">
+                <button type="button" id="main-menu-button-start" class="main-menu-button style-button">Начать Матч</button>
+                <button type="button" id="main-menu-button-statistics" class="main-menu-button style-button">Статистика</button>
+                <button type="button" id="main-menu-button-tournament" class="main-menu-button style-button">Турнир</button>
+                <button type="button" id="main-menu-button-leaderboard" class="main-menu-button style-button">Лидерборд</button>
+            </div>
+        </div>
+    </main>
+    <div class="modal container">
+        <div class="modal-window">
+            <div class="modal-window-h2-exit">
+                <h2 class="modal-window-h2">Настройки матча</h2>
+                <button type="button" class="modal-window-button-exit">
+                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.4985 0.501221L0.864786 18.2227" stroke="white" stroke-linecap="round"/>
+                        <path d="M0.498535 0.501221L18.1323 18.2227" stroke="white" stroke-linecap="round"/>
+                    </svg>                        
+                </button>
+            </div>
+            <form class="modal-window-players">
+                <div class="modal-window-player-1 modal-window-player">
+                    <label for="input-1" class="modal-window-player-label-1 modal-window-player-text">Участник 1</label>
+                    <input id="input-1" class="modal-window-player-1-input modal-window-player-input" placeholder="Введите имя" required></input>
+                </div>
+                <div class="modal-window-player-2 modal-window-player">
+                    <label for="input-2" class="modal-window-player-label-2 modal-window-player-text">Участник 2</label>
+                    <input id="input-2" class="modal-window-player-2-input modal-window-player-input" placeholder="Введите имя" required></input>
+                </div>
+                <!-- <div class="modal-window-range">
+                    <span class="modal-window-range-span modal-window-player-text">Количество партий</span>
+                    <div class="modal-window-range-number-and-input modal-window-range-number-and-input-container">
+                        <div class="modal-window-range-number value-display" id="valueDisplay">1</div>
+                        <input type="range" class="modal-window-range-input" id="mySlider" min="1" max="7" value="1" step="2">
+                    </div>
+                </div> -->
+                <button type="submit" class="modal-window-players-button style-button">Начать игру</a>
+            </form>
+        </div>
+    </div>
+    <script defer src="./js/index.js"></script>
+</body>
+</html>

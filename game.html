@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <link rel="stylesheet" href="./styles/styles-game.css">
+    <link rel="icon" href="./images/EC-32x18.png" type="image/x-icon">
+    <title>ECPong</title>
+</head>
+<body>
+    <div class="container">
+        <div class="game-content">
+
+            <button class="game-content-button game-content-button-1">
+                <div class="game-content-button-personal-account game-content-button-personal-account-1">
+                    <div class="game-content-button-counter game-content-button-counter-1">
+                        <span class="game-content-button-counter-text">Cчет</span>
+                        <span class="game-content-button-num game-content-button-num-1">0</span>
+                    </div>
+                    <!-- <div class="game-content-button-circles game-content-button-circles-1">
+                        <div id="game-content-button-circle-1" class="game-content-button-circle game-content-button-circle-1"></div>
+                        <div id="game-content-button-circle-2" class="game-content-button-circle game-content-button-circle-2"></div>
+                    </div>
+                    <div class="game-content-button-set game-content-button-set-1">
+                        <span class="game-content-button-set-text">Партия</span>
+                        <span class="game-content-button-set-num game-content-button-set-num-1">0</span>
+                    </div> -->
+                </div>
+                <div class="game-content-button-name game-content-button-name-1">Владислав Гребеник</div>
+            </button>
+
+            <div class="game-content-middle-elements">
+                <button class="style-button-game game-content-exit-button">Выход</button>
+                <div class="game-content-notification-and-grid">
+                    <!-- <div class="game-content-notification display">Перед началом матча разыграйте подачу <br><br> По итогу розыгрыша нажмите на половнину игрока который подает первый</div> -->
+                    <img class="game-content-middle-grid-img" src="./images/grid-game.png">
+                </div>
+                <div class="game-content-steps-back">
+                    <button class="game-content-step-back game-content-step-back-1">-</button>
+                    <button class="game-content-step-back game-content-step-back-2">-</button>
+                </div>
+            </div>
+
+            <button class="game-content-button game-content-button-2">
+                <div class="game-content-button-name game-content-button-name-2">Савелий Невенченко</div>
+                <div class="game-content-button-personal-account game-content-button-personal-account-2">
+                    <div class="game-content-button-counter game-content-button-counter-2">
+                        <span class="game-content-button-counter-text">Cчет</span>
+                        <span class="game-content-button-num game-content-button-num-2">0</span>
+                    </div>
+                    <!-- <div class="game-content-button-circles game-content-button-circles-2">
+                        <div id="game-content-button-circle-3" class="game-content-button-circle game-content-button-circle-1"></div>
+                        <div id="game-content-button-circle-4" class="game-content-button-circle game-content-button-circle-2"></div>
+                    </div>
+                    <div class="game-content-button-set game-content-button-set-2">
+                        <span class="game-content-button-set-text">Партия</span>
+                        <span class="game-content-button-set-num game-content-button-set-num-2">0</span>
+                    </div> -->
+                </div>
+            </button>
+
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="container">
+            <div class="modal-window">
+                <button type="button" class="modal-window-button-exit">
+                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.4985 0.501221L0.864786 18.2227" stroke="white" stroke-linecap="round"/>
+                        <path d="M0.498535 0.501221L18.1323 18.2227" stroke="white" stroke-linecap="round"/>
+                    </svg>                        
+                </button>
+                <div class="modal-window-text-and-buttons">
+                    <h2 class="modal-window-text">Вы действительно хотите выйти ?</h2>
+                    <div class="modal-window-buttons">
+                        <button class="modal-window-button-no">Нет</button>
+                        <button class="modal-window-button-yes">Да</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/game.js"></script>
+</body>
+</html>
