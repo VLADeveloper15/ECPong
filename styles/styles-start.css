@@ -1,0 +1,362 @@
+@import url(./fonts.css);
+@import url(./normalize.css);
+
+body {
+    font-family: 'Comfortaa', sans-serif;
+    background-color: #000000;
+    font-weight: 700;
+    line-height: 1;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+    color: #FFFFFF;
+    transition-duration: 0.2s;
+}
+
+a {
+    text-decoration: none;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    color: #FFFFFF;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.container {
+    max-width: calc(1920px + 15px * 2);
+    padding-inline: 15px;
+    margin-inline: auto;
+}
+
+.style-button {
+    max-width: 100%;
+    width: 250px;
+    height: 56px;
+    padding: 0;
+    border: 3px solid #1E40FF;
+    border-bottom-width: 6px;
+    background-color: #2573FB;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+main {
+    margin-bottom: 20px;
+}
+
+.main-menu {
+    margin-inline: auto;
+    max-width: 300px;
+    margin-top: 140px;
+    background-color: #2985FF;
+    border: 3px solid #1E40FF;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.main-menu-rockets-and-ball {
+    margin-inline: auto;
+    margin-top: -102px;
+}
+
+.main-menu-grid {
+    margin-top: -39px;
+    width: 296px;
+}
+
+.main-menu-buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 20px 23px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(110, 110, 110, 60%);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.display {
+    display: flex;
+}
+
+/* Блокируем взаимодействие с главным меню, когда модалка открыта */
+body.modal-open .main-menu {
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Класс для блокировки скролла */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Но внутри модалки всё работает */
+.modal.display .modal-window {
+    pointer-events: auto;
+}
+
+.modal-window {
+    position: relative;
+    max-width: 300px;
+    max-height: 90vh;
+    overflow-y: auto; /* Скролл внутри модального окна */
+    background-color: #2985FF;
+    border: 3px solid #1E40FF;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.modal-window-h2-exit {
+    display: flex;
+}
+
+.modal-window-h2 {
+    padding: 20px 14px 0 66px;
+    text-align: center;
+}
+
+.modal-window-button-exit {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    margin-top: 7px;
+    margin-right: 7px;
+    background-color: transparent;
+    border: 2px solid #1E40FF;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.modal-window-players {
+    padding: 45px 37px 20px 37px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 100%;
+}
+
+.modal-window-player {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.modal-window-player-text {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.modal-window-player-1-input {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.modal-window-player-2-input {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.modal-window-player-input {
+    height: 35px;
+    background-color: rgba(217, 217, 217, 75%);
+    border: 2px solid #1E40FF;
+    padding: 8px 15px;
+}
+
+.modal-window-range-input {
+    width: 120px;
+    height: 6px;
+    border-radius: 20px;
+    padding: 1px;
+    border: 1px solid #000000;
+}
+
+/* Стили для ошибок валидации */
+.modal-window-player-input.error {
+    border: 2px solid red;
+}
+
+.modal-window-player-input:focus {
+    outline: none;
+    border-color: #0B26C0;
+}
+
+.modal-window-player-input.error:focus {
+    border-color: red;
+}
+
+/* Стили для сообщений об ошибках */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    text-shadow: none;
+}
+
+.form-error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+    text-shadow: none;
+}
+
+/* Анимация для ошибки */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.modal-window-player-input.error {
+    animation: shake 0.3s ease-in-out;
+}
+
+.modal-window-range {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.modal-window-range-number-and-input-container {
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    row-gap: 10px;
+    width: 120px;
+}
+
+.value-display {
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 120px;
+    height: 6px;
+    background-color: rgb(30, 64, 255);
+    border-radius: 3px;
+    outline: none;
+}
+
+/* Черная обводка для ползунка */
+input[type="range"]:focus {
+    outline: none;
+}
+
+/* Стили для дорожки (трека) */
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+}
+
+/* Стили для ползунка (кружка) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: rgb(30, 64, 255);
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -7px;
+    transition: transform 0.2s;
+}
+
+/* Для Firefox */
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 6px;
+    background: #ddd;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 2px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.modal-window-players-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (hover:hover) {
+    .style-button:hover {
+        background-color: #2464D3;
+        color: #ececec;
+        transform: scale(1.05);
+    }
+    
+    .style-button:active {
+        transform: translateY(1px);
+        border-bottom-width: 3px;
+    }
+    
+    .modal-window-button-exit:hover{
+        background-color: #2464D3;
+        border: 2px solid #0B26C0;
+        transform: scale(1.05);
+    }
+    
+    .modal-window-button-exit:active {
+        transform: translateY(1px);
+    }
+    
+    .modal-window-button-exit:hover svg path {
+        stroke:  #ececec;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+        transform: scale(1.2);
+    }
+}

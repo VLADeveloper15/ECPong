@@ -1,0 +1,432 @@
+@import url(./fonts.css);
+@import url(./normalize.css);
+
+body {
+    font-family: 'Comfortaa', sans-serif;
+    background-color: #000000;
+    font-weight: 700;
+    line-height: 1;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+    color: #FFFFFF;
+    transition-duration: 0.2s;
+}
+
+a {
+    text-decoration: none;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    color: #FFFFFF;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.container {
+    max-width: calc(1200px + 15px * 2);
+    padding-inline: 15px;
+    margin-inline: auto;
+}
+
+.style-button {
+    max-width: 100%;
+    width: 250px;
+    height: 56px;
+    padding: 0;
+    border: 3px solid #1E40FF;
+    border-bottom-width: 6px;
+    background-color: #2573FB;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+.game-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 3px solid #1E40FF;
+    border-radius: 5px;
+    background-color: #2985FF;
+    max-width: 390px;
+    height: 100vh;
+    margin-inline: auto;
+}
+
+.game-content-button {
+    width: 100%;
+    height: 50%;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.game-content-button-name {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6vh;
+    background-color: #A3BFE3;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    border: 3px solid #1E40FF;
+    font-size: 14px;
+    padding: 0;
+    left: -3px;
+    right: -3px;
+    transition: .2s;
+}
+
+.game-content-button-name-1 {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    top: -3px;
+}
+
+.game-content-button-name-2 {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    bottom: -3px;
+}
+
+.game-content-button-counter {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-size: 25px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.game-content-middle-elements {
+    display: flex;
+}
+
+.style-button-game {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    background-color: rgba(19, 19, 228, 16%);
+    border: 3px solid #1E40FF;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-size: 12px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.style-button-game:hover {
+    background-color: #2464D3;
+    color: #ececec;
+}
+
+.game-content-middle-grid-img {
+    position: relative;
+    min-width: 40px;
+    width: 270px;
+    height: 60px;
+}
+
+.game-content-notification-and-grid {
+    max-width: 280px;
+    width: 100%;
+}
+
+.game-content-notification {
+    position: absolute;
+    font-size: 10px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    display: none;
+    align-items: center;
+    text-align: center;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+    background-color: #2573FA;
+    border: 3px solid #1E40FF;
+    border-radius: 20px;
+    z-index: 1;
+    animation: game-content-notification 2s infinite;
+}
+
+.game-content-notification.display {
+    display: flex;
+}
+
+@keyframes game-content-notification {
+    0% {
+        opacity: 1;
+    }
+    
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.game-content-exit-button {
+    background-color: transparent;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.game-content-step-back {
+    width: 55px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 3px solid #1E40FF;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-size: 28px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+
+.game-content-step-back-1 {
+    border-top-right-radius: 20px;
+    border-bottom: 1px solid #1E40FF;
+}
+
+.game-content-step-back-2 {
+    border-bottom-right-radius: 20px;
+    border-top: 1px solid #1E40FF;
+}
+
+.game-content-button-circles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    margin-top: 27px;
+}
+
+.game-content-button-circle {
+    width: 30px;
+    height: 30px;
+    background-color: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 50%;
+}
+
+#game-content-button-circle-1.active,
+#game-content-button-circle-2.active,
+#game-content-button-circle-3.active,
+#game-content-button-circle-4.active {
+    animation: game-content-button-circle-1__active 1.2s infinite;
+}
+
+@keyframes game-content-button-circle-1__active {
+    0% {
+        background-color: #ffffff;
+    }
+
+    50% {
+        background-color: #1e069762;
+    }
+    
+    100% {
+        background-color: #FFFFFF;
+    }
+}
+
+.game-content-button-set {
+    margin-top: 27px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-size: 16px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+@media (max-height: 580px) {
+    .game-content-button-counter {
+        font-size: 20px;
+    }
+    
+    .game-content-button-circles,
+    .game-content-button-set {
+        margin-top: 15px;
+    }
+    
+    .game-content-button-counter,
+    .game-content-button-set {
+        row-gap: 5px;
+    }
+    
+    .game-content-button-circle {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .game-content-button-set {
+        font-size: 12px;
+    }
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(110, 110, 110, 60%);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.display {
+    display: flex;
+}
+
+/* Блокируем взаимодействие с главным меню, когда модалка открыта */
+body.modal-open .main-menu {
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Класс для блокировки скролла */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Но внутри модалки всё работает */
+.modal.display .modal-window {
+    pointer-events: auto;
+}
+
+.modal-window {
+    position: relative;
+    max-width: 300px;
+    max-height: 90vh;
+    overflow-y: auto; /* Скролл внутри модального окна */
+    background-color: #2985FF;
+    border: 3px solid #1E40FF;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.modal-window-button-exit {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    background-color: transparent;
+    border: 2px solid #1E40FF;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.modal-window-text-and-buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    margin-block: 65px;
+}
+
+.modal-window-text {
+    margin-inline: 60px;
+}
+
+.modal-window-buttons {
+    display: flex;
+    column-gap: 25px;
+    margin-inline: auto;
+}
+
+.modal-window-button-no,
+.modal-window-button-yes {
+    width: 110px;
+    height: 55px;
+    padding: 0px;
+    background-color: transparent;
+    border: 2px solid #1E40FF;
+    border-bottom-width: 4px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    cursor: pointer;
+}
+
+@media (hover:hover) {
+    .modal-window-button-exit:hover,
+    .modal-window-button-no:hover,
+    .modal-window-button-yes:hover {
+        background-color: #2464D3;
+        color: #ececec;
+        transform: scale(1.05);
+    }
+    
+    .modal-window-button-exit:active,
+    .modal-window-button-no:active,
+    .modal-window-button-yes:active {
+        transform: translateY(1px);
+        border-bottom-width: 3px;
+    }
+    
+    .modal-window-button-exit:hover{
+        background-color: #2464D3;
+        border: 2px solid #0B26C0;
+        transform: scale(1.05);
+    }
+    
+    .modal-window-button-exit:active {
+        transform: translateY(1px);
+    }
+    
+    .modal-window-button-exit:hover svg path {
+        stroke:  #ececec;
+    }
+    
+    .game-content-button:hover {
+        background-color: #2464D3;
+        color: #ececec;
+        border-radius: 3px;
+    }
+    
+    .game-content-button:hover .game-content-button-name {
+        background-color: #b2b2b2;
+        color: #ececec;
+    }
+    
+    .game-content-step-back:hover {
+        background-color: #2464D3;
+        color: #ececec;
+    }
+}
